@@ -35,8 +35,7 @@ This repository contains an OAuth 2.0 client library implemented in JavaScript a
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/oauth-client-demo.git
-   cd oauth-client-demo
+   git clone [https://github.com/your-username/oauth-client-demo.git](https://github.com/i-m-Paras/NoScrubs_Assignment.git)
    ```
 
 2. Install dependencies:
