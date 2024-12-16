@@ -15,7 +15,7 @@ class OAuthClient {
 
   async handleCallback(callbackParams) {
     const { code } = callbackParams;
-    const response = await fetch(`${this.providerUrl}/token`, {
+    const response = await fetch(`${this.providerUrl}/oauth/token`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -26,6 +26,10 @@ class OAuthClient {
         grant_type: "authorization_code",
       }),
     });
+    if (!response.ok) {
+      console.error("Error:", response.status, await response.text());
+      throw new Error(`Token exchange failed with status ${response.status}`);
+    }
     return response.json();
   }
 
